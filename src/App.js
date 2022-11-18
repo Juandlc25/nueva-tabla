@@ -1,23 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CustomTable from "./components/customTable";
+import Header from "./components/header";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header />
+      <div className="content">
+        <div className="main-content">
+          <div className="main-content-name">
+            <label>Nombre</label>
+            <input
+              type="text"
+              className="main-content-input"
+              placeholder="Person"
+            />
+          </div>
+          <div className="main-content-description">
+            <label>Descripción</label>
+            <input
+              type="textarea"
+              className="main-content-textarea"
+              placeholder="Tabla usada para x y z"
+            />
+          </div>
+        </div>
+        <CustomTable
+          title="Atributos"
+          headerTitles={[
+            "Nombre",
+            "Tipo",
+            "Descripción",
+            "Constrains",
+            "Delete",
+          ]}
+        />
+        <CustomTable
+          title="Relaciones"
+          headerTitles={[
+            "Tabla",
+            "Tipo",
+            "Descripción",
+            "Constrains",
+            "Delete",
+          ]}
+        />
+      </div>
     </div>
   );
 }
